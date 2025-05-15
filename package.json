@@ -1,0 +1,22 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "author": "Prashant Singh",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.14.4",
+    "@types/node": "^22.15.17",
+    "parcel": "^2.14.4",
+    "process": "^0.11.10",
+    "sass": "^1.87.0"
+  }
+}
