@@ -169,6 +169,7 @@
     border: none;
     cursor: pointer;
     transition: all 0.3s;
+    padding-inline: 1rem;
 
     display: flex;
     align-items: center;
@@ -196,6 +197,7 @@
     }
     &__btn {
       font-size: 1.3rem;
+      padding: 0.8rem;
       svg {
         height: 2.2rem;
         width: 2.2rem;
@@ -210,6 +212,7 @@
     }
     &__btn {
       font-size: 1.2rem;
+      padding: 0.6rem;
       svg {
         height: 2rem;
         width: 2rem;
@@ -223,6 +226,7 @@
     }
     &__btn {
       font-size: 1rem;
+      padding: 0.5rem;
     }
   }
   @media only screen and (max-width: $bp-smallest) {

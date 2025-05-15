@@ -4,6 +4,11 @@ import View from './view';
 
 class BookmarksView extends View<RecipeBase[]> {
   _parentElement = document.querySelector('.bookmarks') as HTMLDivElement;
+
+  addLoadHandler(handler: () => void) {
+    window.addEventListener('load', handler);
+  }
+
   protected _generateMarkup(): string {
     return `
         <ul class="results">
