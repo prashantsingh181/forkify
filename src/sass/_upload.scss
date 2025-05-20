@@ -1,0 +1,162 @@
+@use './base' as *;
+
+.add-recipe-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: min(85rem, 95vw);
+  background-color: white;
+  border-radius: 9px;
+  border: 1px solid $color-grey-light-1;
+
+  padding: 5rem 6rem;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.25);
+  transition: all 0.5s;
+
+  ::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+  }
+  .btn--close-modal {
+    font-family: inherit;
+    color: inherit;
+    position: absolute;
+    top: 0.5rem;
+    right: 1.6rem;
+    font-size: 3.5rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    padding: 4rem 5rem;
+    .btn--close-modal {
+      font-size: 3rem;
+    }
+  }
+  @media only screen and (max-width: $bp-medium) {
+    min-width: min(50rem, 95vw);
+
+    padding: 3rem 4rem;
+    .btn--close-modal {
+      font-size: 2.75rem;
+    }
+  }
+  @media only screen and (max-width: $bp-small) {
+    padding: 2rem 3rem;
+    .btn--close-modal {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.upload {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem 6rem;
+
+  &__column {
+    display: grid;
+    grid-template-columns: 1fr 2.8fr;
+    align-items: center;
+    gap: 1.5rem;
+
+    & label {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: inherit;
+    }
+
+    & input {
+      font-size: 1.5rem;
+      padding: 0.8rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      transition: all 0.2s;
+      width: 100%;
+
+      &::placeholder {
+        color: $color-grey-light-3;
+      }
+
+      &:focus {
+        outline: none;
+        border: 1px solid $color-primary;
+        background-color: $color-grey-light-1;
+      }
+    }
+
+    & button {
+      grid-column: 1 / span 2;
+      justify-self: center;
+      margin-top: 1rem;
+    }
+  }
+
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    grid-column: 1/-1;
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+    transition: all 0.2s;
+  }
+  .form-error {
+    font-size: 1rem;
+    color: red;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    gap: 3rem 5rem;
+
+    &__column {
+      gap: 1.25rem;
+
+      & label {
+        font-size: 1.25rem;
+      }
+
+      & input {
+        font-size: 1.25rem;
+        padding: 0.75rem 0.9rem;
+      }
+    }
+
+    &__heading {
+      font-size: 2rem;
+      margin-bottom: 0.9rem;
+    }
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &__column {
+      & label {
+        font-size: 1.25rem;
+      }
+
+      & input {
+        font-size: 1.25rem;
+        padding: 0.7rem 0.85rem;
+      }
+    }
+
+    &__heading {
+      font-size: 2rem;
+    }
+  }
+}

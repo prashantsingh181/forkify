@@ -1,0 +1,11 @@
+@use './base' as *;
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+}
+
+.results {
+  list-style: none;
+}
+

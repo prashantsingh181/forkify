@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="src/sass/main.scss" />
+    <script type="module" src="src/js/controller.ts"></script>
+
+    <title>forkify // Search over 1,000,000 recipes</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <img src="src/img/logo.png" alt="Logo" class="header__logo" />
+        <button class="search">
+          <svg class="search__icon">
+            <use href="src/img/icons.svg#icon-search"></use>
+          </svg>
+          <div class="search__field">Search for recipes...</div>
+        </button>
+
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <button class="nav__btn nav__btn--add-recipe">
+                <svg class="nav__icon">
+                  <use href="src/img/icons.svg#icon-edit"></use>
+                </svg>
+                <span>Add recipe</span>
+              </button>
+            </li>
+            <li class="nav__item">
+              <button class="nav__btn nav__btn--bookmarks">
+                <svg class="nav__icon">
+                  <use href="src/img/icons.svg#icon-bookmark"></use>
+                </svg>
+                <span>Bookmarks</span>
+              </button>
+              <div class="bookmarks">
+                <ul class="bookmarks__list">
+                  <div class="message">
+                    <div>
+                      <svg>
+                        <use href="src/img/icons.svg#icon-smile"></use>
+                      </svg>
+                    </div>
+                    <p>
+                      No bookmarks yet. Find a nice recipe and bookmark it :)
+                    </p>
+                  </div>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="recipe">
+        <div class="message">
+          <div>
+            <svg>
+              <use href="src/img/icons.svg#icon-smile"></use>
+            </svg>
+          </div>
+          <p>Start by searching for a recipe or an ingredient. Have fun!</p>
+        </div>
+      </div>
+    </div>
+
+    <dialog class="add-recipe-window">
+      <button class="btn--close-modal">&times;</button>
+      <div class="add-recipe-container">
+        <form class="upload">
+          <div class="upload__column">
+            <h3 class="upload__heading">Recipe data</h3>
+            <label htmlFor="titleInput">Title</label>
+            <div>
+              <input
+                name="title"
+                id="titleInput"
+                type="text"
+                placeholder="Title"
+                value="Homemade Lasagna"
+              />
+            </div>
+            <label htmlFor="sourceUrlInput">URL</label>
+            <div>
+              <input
+                name="source_url"
+                id="sourceUrlInput"
+                type="text"
+                placeholder="Source url"
+                value="https://www.simplyrecipes.com/recipes/lasagna/"
+              />
+            </div>
+            <label htmlFor="imageInput">Image URL</label>
+            <div>
+              <input
+                name="image_url"
+                id="imageInput"
+                type="text"
+                placeholder="Image url"
+                value="https://www.simplyrecipes.com/thmb/Y3uEitjZdpzB46HxXy3JnsHXXN0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Best-Classic-Lasagna-Lead-7-48433ed3fa71405b967e77d09c494a74.jpg"
+              />
+            </div>
+            <label htmlFor="publisherInput">Publisher</label>
+            <div>
+              <input
+                name="publisher"
+                id="publisherInput"
+                type="text"
+                placeholder="Publisher"
+                value="Elise Bauer"
+              />
+            </div>
+            <label htmlFor="cookingTimeInput">Prep time</label>
+            <div>
+              <input
+                name="cooking_time"
+                id="cookingTimeInput"
+                type="number"
+                placeholder="Cooking time"
+                value="30"
+              />
+            </div>
+            <label htmlFor="servingsInput">Servings</label>
+            <div>
+              <input
+                name="servings"
+                id="servingsInput"
+                type="number"
+                max="10"
+                placeholder="Servings"
+                value="2"
+              />
+            </div>
+          </div>
+
+          <div class="upload__column">
+            <h3 class="upload__heading">Ingredients</h3>
+            <label htmlFor="ingredient-1-input">Ingredient 1</label>
+            <div>
+              <input
+                type="text"
+                name="ingredient-1"
+                id="ingredient-1-input"
+                placeholder="Format: 'Quantity,Unit,Description'"
+                value="0.5,pound,Dry Lasagna Noodles"
+              />
+            </div>
+            <label htmlFor="ingredient-2-input">Ingredient 2</label>
+            <div>
+              <input
+                type="text"
+                name="ingredient-2"
+                id="ingredient-2-input"
+                placeholder="Format: 'Quantity,Unit,Description'"
+                value="15,ounces,Ricotta Cheese"
+              />
+            </div>
+            <label htmlFor="ingredient-3-input">Ingredient 3</label>
+            <div>
+              <input
+                type="text"
+                name="ingredient-3"
+                id="ingredient-3-input"
+                placeholder="Format: 'Quantity,Unit,Description'"
+                value="1.5,pounds,mozzarella cheese"
+              />
+            </div>
+            <label htmlFor="ingredient-4-input">Ingredient 4</label>
+            <div>
+              <input
+                type="text"
+                name="ingredient-4"
+                id="ingredient-4-input"
+                placeholder="Format: 'Quantity,Unit,Description'"
+                value="0.25,pound,Parmesan Cheese"
+              />
+            </div>
+            <label htmlFor="ingredient-5-input">Ingredient 5</label>
+            <div>
+              <input
+                type="text"
+                name="ingredient-5"
+                htmlFor="ingredient-5-input"
+                placeholder="Format: 'Quantity,Unit,Description'"
+                value="3,ounces,Tomato Paste"
+              />
+            </div>
+            <label htmlFor="ingredient-6-input">Ingredient 6</label>
+            <div>
+              <input
+                type="text"
+                name="ingredient-6"
+                id="ingredient-6-input"
+                placeholder="Format: 'Quantity,Unit,Description'"
+                value="0.5,,Large Bell Pepper"
+              />
+            </div>
+          </div>
+
+          <div class="form-error"></div>
+
+          <button type="submit" class="btn upload__btn">
+            <svg>
+              <use href="src/img/icons.svg#icon-upload-cloud"></use>
+            </svg>
+            <span>Upload</span>
+          </button>
+        </form>
+      </div>
+    </dialog>
+    <dialog class="search__dialog">
+      <div class="search__form-container">
+        <div class="search__form">
+          <svg class="search__icon">
+            <use href="src/img/icons.svg#icon-search"></use>
+          </svg>
+          <input
+            type="text"
+            class="search__field"
+            name="query"
+            autocomplete="off"
+            placeholder="Search over 1 million recipes..."
+          />
+        </div>
+      </div>
+      <div class="search-results">
+        <div class="message">
+          <div>
+            <svg>
+              <use href="src/img/icons.svg#icon-smile"></use>
+            </svg>
+          </div>
+          <p>
+            Start typing to search through our recipes. Please make sure to
+            write full words, For Ex- Pizza, Burger.
+          </p>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
