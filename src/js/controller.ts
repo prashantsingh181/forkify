@@ -106,7 +106,11 @@ function controlBookmarks() {
 
   // set active in bookmark and render
   bookmarkModel.setActive(recipeModel.recipe.id);
-  bookmarksView.render(bookmarkModel.bookmarks);
+  if (bookmarkModel.bookmarks.length > 0) {
+    bookmarksView.render(bookmarkModel.bookmarks);
+  } else {
+    bookmarksView.renderMessage();
+  }
 }
 
 function controlLoadBookMark() {
