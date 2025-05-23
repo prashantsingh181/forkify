@@ -2,6 +2,8 @@
 
 Forkify is a TypeScript-based modern recipe web application built using [Vite](https://vitejs.dev/). It follows the MVC architectural pattern and integrates with a recipe API, allowing users to search, view, bookmark, and even add their own recipes.
 
+<img width="1440" alt="Forkify Preview" src="https://github.com/user-attachments/assets/2e70037c-0bcc-4736-9b14-ec1ed0a55573" />
+
 ## 🚀 Live Preview
 
 👉 [Click here to view the live app](https://forkify181.netlify.app/)
